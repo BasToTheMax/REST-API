@@ -1,5 +1,6 @@
 // Import packages
 const express = require("express");
+const chalk = require("chalk");
 
 // Load config
 const Config_API = require('./config/api.json');
@@ -9,7 +10,7 @@ const app = express();
 
 // Logging
 app.use((req, res, next) => {
-  console.log(`${req.method} ${req.path}`);
+  console.log(`${chalk.green(req.ip)} ${chalk.blue(req.method)} ${chalk.red(req.path)}`);
   next();
 });
 
@@ -23,5 +24,5 @@ app.get("/", (req, res) => {
 
 // Start listening on port 5000
 app.listen(Config_API.port, () => {
-  console.log("API listening at port " + Config_API.port);
+  console.log(chalk.yellow("\tAPI listening at port " + Config_API.port) + '\n');
 });
