@@ -1,3 +1,3 @@
 # Docs
-[Installation](./install)
-[New routes](./add)
+- [Installation](./install)
+- [New routes](./add)
