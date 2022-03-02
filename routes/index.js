@@ -22,8 +22,13 @@ fs.readdirSync(__dirname).forEach(function(file) {
 
     // Make a endpoint of the route
     app.get(`/${route.name}`, async (req, res) => {
-        // execute the code
-        route.run(req, res)                        
+        try {
+            // try to execute the code
+            route.run(req, res);
+        } catch(e) {
+            res.status(500)
+            res.send('error' + String(e));
+        }         
     })
 });
 
