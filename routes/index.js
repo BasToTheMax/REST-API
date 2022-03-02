@@ -1,12 +1,26 @@
-const fs = require("fs")
+// Import packages
+const express = require('express');
+const fs = require("fs");
 
-module.exports = function(app){
+module.exports = function() {
+    // Setup express
+    const app = express.Router();
+
+    // Loop through files
     fs.readdirSync(__dirname).forEach(function(file) {
+        // If the file is 'index.js' continue to next file
         if (file == "index.js") return;
+
+        // remove .js of the file
         var name = file.substr(0, file.indexOf('.'));
-        const route = require('./' + name)
-                app.get(`/${route.name}`, async (req, res) => {
-                route.run(req, res)                        
-                })
+
+        // Import the route
+        const route = require('./' + name);
+
+        // Make a endpoint of the route
+        app.get(`/${route.name}`, async (req, res) => {
+            // execute the code
+            route.run(req, res)                        
+        })
     });
 }

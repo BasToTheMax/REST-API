@@ -1,12 +1,21 @@
-const express = require("express")
-const app = express()
+// Import packages
+const express = require("express");
 
-require("./routes")(app)
+// Load config
+const Config_API = require('./config/api.json');
 
+// Setup express
+const app = express();
+
+// Routing
+app.use(require("./routes"));
+
+// Home page
 app.get("/", (req, res) => {
-  res.send("Home page")
-})
+  res.send("Home page");
+});
 
-app.listen(5000, () => {
-  console.log("api is up!")
-})// done!
+// Start listening on port 5000
+app.listen(Config_API.port, () => {
+  console.log("API listening at port " + Config_API.port);
+});
