@@ -8,6 +8,9 @@ const Config_API = require('./config/api.json');
 // Setup express
 const app = express();
 
+// Pretty json
+app.set("json spaces", 2);
+
 // Error handeler
 app.use(require('./handelers/error'));
 
