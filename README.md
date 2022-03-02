@@ -3,4 +3,4 @@ A template to make your own REST API!
 
 
 ## Docs
-Please look in the 
+[Open docs](https://bastothemax.github.io/REST-API/)
