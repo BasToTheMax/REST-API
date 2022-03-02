@@ -8,5 +8,7 @@ A template to make your own REST API!
 
 > Easy installer
 
+> Pretty json
+
 ## Docs
 [Open docs](https://bastothemax.github.io/REST-API/)
