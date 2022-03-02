@@ -7,6 +7,12 @@ const Config_API = require('./config/api.json');
 // Setup express
 const app = express();
 
+// Logging
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.path}`);
+  next();
+});
+
 // Routing
 app.use(require("./routes"));
 
