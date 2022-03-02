@@ -8,6 +8,9 @@ const Config_API = require('./config/api.json');
 // Setup express
 const app = express();
 
+// Error handeler
+app.use(require('./handelers/error'));
+
 // Logging
 app.use((req, res, next) => {
   console.log(`${chalk.green(req.ip)} ${chalk.blue(req.method)} ${chalk.red(req.path)}`);
