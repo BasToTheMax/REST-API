@@ -1,5 +1,6 @@
-# API-Template
-Template to make your own REST API with an endpoint handler too!
-Support: https://popcat.xyz/server
+# REST API Template
+A template to make your own REST API!
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y56OOQW)
+
+## Docs
+Please look in the 
