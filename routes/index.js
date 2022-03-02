@@ -10,11 +10,15 @@ fs.readdirSync(__dirname).forEach(function(file) {
     // If the file is 'index.js' continue to next file
     if (file == "index.js") return;
 
-    // remove .js of the file
-    var name = file.substr(0, file.indexOf('.'));
+    // split file name
+    var FileName = file.split('.');
+
+    // get the medhod and name
+    const method = FileName[0];
+    const name = FileName[1];
 
     // Import the route
-    const route = require('./' + name);
+    const route = require('./' + file);
 
     // Make a endpoint of the route
     app.get(`/${route.name}`, async (req, res) => {
