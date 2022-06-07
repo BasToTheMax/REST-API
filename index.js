@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
   res.send("Home page");
 });
 
-// Start listening on port 5000
+// Start listening on port 80
 app.listen(Config_API.port, () => {
-  console.log(chalk.yellow("\tAPI listening at port " + Config_API.port) + '\n');
+  console.log(chalk.yellow(`\tAPI listening at port ${Config_API.port}\n`));
 });
