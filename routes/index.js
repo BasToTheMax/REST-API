@@ -8,12 +8,12 @@ const app = express.Router();
 // Loop through files
 fs.readdirSync(__dirname).forEach(function(file) {
     // If the file is 'index.js' continue to next file
-    if (file == "index.js") return;
+    if (file === "index.js") return;
 
     // split file name
     var FileName = file.split('.');
 
-    // get the medhod and name
+    // get the method and name
     const method = FileName[0];
     const name = FileName[1];
 
@@ -27,7 +27,7 @@ fs.readdirSync(__dirname).forEach(function(file) {
             route.run(req, res);
         } catch(e) {
             res.status(500)
-            res.send('error' + String(e));
+            res.send('Error: ' + String(e));
         }         
     })
 });
